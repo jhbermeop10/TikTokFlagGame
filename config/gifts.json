@@ -1,0 +1,31 @@
+{
+    "Rose": {
+        "points": 1,
+        "sound": "gift.mp3",
+        "animation": "small"
+    },
+
+    "Finger Heart": {
+        "points": 2,
+        "sound": "gift.mp3",
+        "animation": "small"
+    },
+
+    "Panda": {
+        "points": 5,
+        "sound": "gift.mp3",
+        "animation": "medium"
+    },
+
+    "Lion": {
+        "points": 20,
+        "sound": "lion.mp3",
+        "animation": "big"
+    },
+
+    "Universe": {
+        "points": 100,
+        "sound": "universe.mp3",
+        "animation": "legendary"
+    }
+}

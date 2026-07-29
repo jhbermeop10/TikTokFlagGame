@@ -1,0 +1,65 @@
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    margin:0;
+
+    overflow:hidden;
+
+}
+
+body{
+
+    background:transparent;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+}
+
+#app{
+
+    width:1600px;
+
+    height:900px;
+
+}
+
+#topBar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+#content{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+#gamePanel{
+
+    flex:3;
+
+}
+
+#rankingPanel{
+
+    width:320px;
+
+}

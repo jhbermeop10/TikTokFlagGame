@@ -1,0 +1,179 @@
+#topBar{
+
+    background:rgba(20,20,20,.60);
+
+    border-radius:20px;
+
+    padding:25px 35px;
+
+    backdrop-filter:blur(12px);
+
+}
+
+#gameTitle{
+
+    color:white;
+
+    font-size:48px;
+
+    margin:0;
+
+}
+
+#countryName{
+
+    color:#dddddd;
+
+    font-size:24px;
+
+    margin-top:8px;
+
+}
+
+#goalCard{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+#goalCard span{
+
+    display:block;
+
+    font-size:20px;
+
+}
+
+#goalCard strong{
+
+    font-size:42px;
+
+}
+
+#flagContainer{
+
+    width:100%;
+
+    height:520px;
+
+    background:#1b1b1b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#flagReveal{
+
+    width:0%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    transition:width .5s ease;
+
+}
+
+#flag{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+#progressArea{
+
+    margin-top:25px;
+
+}
+
+#progressBar{
+
+    height:32px;
+
+    background:#2b2b2b;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#00d26a,#00ff95);
+
+}
+
+#progressGlow{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+
+    animation:shine 2s linear infinite;
+
+}
+
+#progressText{
+
+    margin-top:15px;
+
+    color:white;
+
+    font-size:40px;
+
+    text-align:center;
+
+}
+
+#giftNotification{
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    font-size:28px;
+
+}
+
+#rankingPanel{
+
+    background:rgba(20,20,20,.60);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    color:white;
+
+}
+
+#rankingPanel li{
+
+    margin:12px 0;
+
+    font-size:24px;
+
+}

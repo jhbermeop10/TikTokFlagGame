@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TikTok Flag Game</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <header id="topBar">
+
+        <div>
+
+            <h1 id="gameTitle">COMPLETA LA BANDERA</h1>
+
+            <div id="countryName">Colombia</div>
+
+        </div>
+
+        <div id="goalCard">
+
+            <span>Meta</span>
+
+            <strong id="goalValue">100%</strong>
+
+        </div>
+
+    </header>
+
+    <main id="content">
+
+        <section id="gamePanel">
+
+            <div id="flagContainer">
+
+                <div id="flagReveal">
+
+                    <img
+                        id="flag"
+                        src="assets/flags/colombia.png">
+
+                </div>
+
+            </div>
+
+            <div id="progressArea">
+
+                <div id="progressBar">
+
+                    <div id="progressFill"></div>
+
+                    <div id="progressGlow"></div>
+
+                </div>
+
+                <div id="progressText">
+
+                    0%
+
+                </div>
+
+            </div>
+
+            <div id="giftNotification">
+
+                Esperando regalos...
+
+            </div>
+
+        </section>
+
+        <aside id="rankingPanel">
+
+            <h2>🏆 Ranking</h2>
+
+            <ol id="rankingList">
+
+                <li>Esperando...</li>
+
+            </ol>
+
+        </aside>
+
+    </main>
+
+</div>
+
+<script src="js/socket.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/ranking.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
