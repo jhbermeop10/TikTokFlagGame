@@ -1,21 +1,19 @@
 const countryService = require("./countryService");
-
 const state = require("../state");
 const config = require("../config");
 
 const rankingService = require("./rankingService");
 const socketManager = require("../socket");
 
-const { getGift } = require("../configLoader");
-
-// Cargar la configuración al iniciar
-require("../configLoader").loadGiftConfig();
-
 function processGift(user, giftName) {
 
-    const gift = getGift(giftName);
+    // Procesar el regalo y actualizar el país
+    const result = countryService.processGift(
+        giftName,
+        config.goal
+    );
 
-    if (!gift) {
+    if (!result) {
 
         console.log("Regalo sin configurar:", giftName);
 
@@ -23,74 +21,58 @@ function processGift(user, giftName) {
 
     }
 
-    // Ranking
-    rankingService.addPoints(user, gift.points);
+    // Actualizar ranking
+    rankingService.addPoints(
+        user,
+        result.country.gift.points
+    );
 
     state.ranking = rankingService.getRanking();
 
-    // Progreso
-    const result = countryService.addProgress(
-    giftName,
-    gift.points,
-    config.goal
-    );
+    // Actualizar listado de países
+    state.countries = countryService.getSortedCountries();
 
-    state.countries =
-    countryService.getSortedCountries();
+    // Guardar último regalo recibido
+    state.lastUser = user;
 
-    if (!result) {
-        return state;
-    }
+    state.lastGift = {
 
-    // Último regalo
-    // Último regalo
-state.lastUser = user;
+        name: result.country.gift.name,
 
-state.lastGift = {
+        emoji: result.country.gift.emoji,
 
-    name: giftName,
-
-    points: gift.points,
-
-    emoji: gift.emoji || "🎁",
-
-    effect: gift.effect || null,
-
-    sound: gift.sound || null
-
-};
-
-    // ¿Meta completada?
-    if (result.completed) {
-
-    console.log(`🏆 ${result.country.country} ganó`);
-
-    countryService.addWin(result.country);
-
-    state.countries =
-    countryService.getSortedCountries();
-
-    state.winner = {
-
-    id: result.country.id,
-
-    country: result.country.country,
-
-    emoji: result.country.emoji,
-
-    wins: result.country.wins + 1
+        points: result.country.gift.points
 
     };
 
-    setTimeout(() => {
+    // Si un país llegó a la meta
+    if (result.completed) {
 
-        countryService.resetCountry(result.country);
+        console.log(`🏆 ${result.country.country} ganó una ronda`);
 
-        state.winner = null;
+        state.winner = {
 
-        socketManager.broadcastGameState(state);
+            id: result.country.id,
 
-        },5000);
+            country: result.country.country,
+
+            emoji: result.country.emoji,
+
+            wins: result.country.wins
+
+        };
+
+        setTimeout(() => {
+
+            countryService.resetCountry(result.country);
+
+            state.countries = countryService.getSortedCountries();
+
+            state.winner = null;
+
+            socketManager.broadcastGameState(state);
+
+        }, 5000);
 
     }
 

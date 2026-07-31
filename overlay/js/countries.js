@@ -35,28 +35,6 @@ window.renderCountries = function (countries) {
         updateCountries(countries);
 
     }
-
-    countries
-    .sort((a, b) => {
-
-        if (b.progress !== a.progress) {
-            return b.progress - a.progress;
-        }
-
-        return b.wins - a.wins;
-
-    })
-    .forEach((country, index) => {
-
-        const card = createCountryCard(
-            country,
-            index + 1
-        );
-
-        grid.appendChild(card);
-
-    });
-
 }
 
 window.updateCountries = function (countries) {
@@ -109,50 +87,56 @@ function createCountryCard(country, position) {
 
     card.innerHTML = `
 
-    <div class="countryPosition">
-        #${position}
-    </div>
+<div class="countryTop">
 
-    <div class="countryTop">
+    <div class="countryLeft">
 
-        <div class="countryInfo">
+        <span class="countryPosition">
+            #${position}
+        </span>
 
-            <span class="countryEmoji">
-                ${country.emoji}
-            </span>
+        <span class="countryEmoji">
+            ${country.emoji}
+        </span>
 
-            <span class="countryName">
-                ${country.country}
-            </span>
-
-        </div>
-
-        <div class="countryWins wins">
-            🏆 ${country.wins}
-        </div>
-
-    </div>
-
-    <img
-        class="countryFlag"
-        src="assets/flags/${country.flag}"
-        alt="${country.country}">
-
-    <div class="countryProgress">
-
-        <div class="countryFill"></div>
-
-    </div>
-
-    <div class="countryFooter">
-
-        <span class="percent">
-            ${country.progress}%
+        <span class="countryName">
+            ${country.country}
         </span>
 
     </div>
 
-    `;
+    <div class="countryWins wins">
+
+        🏆 ${country.wins}
+
+    </div>
+
+</div>
+
+<img
+    class="countryFlag"
+    src="assets/flags/${country.flag}"
+    alt="${country.country}">
+
+<div class="countryProgress">
+
+    <div class="countryFill"></div>
+
+</div>
+
+<div class="countryFooter">
+
+    <span class="percent">
+
+        ${country.progress}%
+
+    </span>
+
+</div>
+
+`;
+
+
 
     countryElements[country.id] = {
 
@@ -168,10 +152,27 @@ function createCountryCard(country, position) {
 
 };
 
+countryElements[country.id].progress.style.background =
+`linear-gradient(
+90deg,
+${country.colors.primary},
+${country.colors.secondary},
+${country.colors.accent}
+)`;
+
     countryElements[country.id].progress.style.width =
         country.progress + "%";
 
-    countryElements[country.id].card = card;
+
+const ui = countryElements[country.id];
+
+ui.progress.style.background = `
+linear-gradient(
+90deg,
+${country.colors.primary},
+${country.colors.secondary},
+${country.colors.accent}
+)`;
 
     return card;
 

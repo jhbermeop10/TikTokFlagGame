@@ -1,64 +1,153 @@
+/*====================================
+    APP
+====================================*/
+
 #app{
 
-    width:100%;
-    height:100%;
+    width:720px;
 
-    padding:40px;
-
-}
-
-#topBar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    margin-bottom:40px;
-
-}
-
-#content{
-
-    display:grid;
-
-    grid-template-columns:1fr 320px;
-
-    gap:40px;
-
-    align-items:start;
-
-}
-
-#gamePanel{
+    margin:25px;
 
     display:flex;
 
     flex-direction:column;
 
+    gap:18px;
+
+}
+
+/*====================================
+    HEADER
+====================================*/
+
+#header{
+
+    display:flex;
+
+    justify-content:space-between;
+
     align-items:center;
 
 }
 
-#rankingPanel{
+#titleArea h1{
 
-    width:100%;
+    font-size:34px;
 
-}
+    color:white;
 
-#battlePanel{
-
-    width:100%;
+    font-weight:800;
 
 }
 
-#countriesGrid{
+#titleArea span{
+
+    color:#bdbdbd;
+
+    font-size:16px;
+
+}
+
+#goalCard{
+
+    background:#1d1d1d;
+
+    padding:12px 20px;
+
+    border-radius:16px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+/*====================================
+    CUERPO
+====================================*/
+
+#mainLayout{
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:500px 200px;
 
-    gap:25px;
+    gap:18px;
+
+    align-items:start;
+
+}
+
+/*====================================
+    PAISES
+====================================*/
+
+#countriesGrid{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+/*====================================
+    TOP FANS
+====================================*/
+
+#rankingPanel{
+
+    background:rgba(20,20,20,.80);
+
+    border-radius:18px;
+
+    padding:15px;
+
+}
+
+#rankingPanel h2{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+#rankingList{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+#rankingList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+}
+
+/*====================================
+    NOTIFICACION
+====================================*/
+
+#giftNotification{
+
+    background:rgba(20,20,20,.80);
+
+    border-radius:18px;
+
+    padding:14px;
+
+    text-align:center;
+
+    font-size:20px;
 
 }

@@ -1,58 +1,82 @@
 [
     {
-        "id": 1,
+        "id": "colombia",
         "country": "Colombia",
         "emoji": "🇨🇴",
         "flag": "colombia.png",
+
         "gift": {
             "name": "Rose",
-            "emoji": "🌹",
             "points": 1
         },
+
+        "colors": {
+            "primary": "#FCD116",
+            "secondary": "#003893",
+            "accent": "#CE1126"
+        },
+
         "progress": 0,
-        "wins": 0,
-        "color": "#FCD116"
+        "wins": 0
     },
     {
-        "id": 2,
+        "id": "brazil",
         "country": "Brasil",
         "emoji": "🇧🇷",
         "flag": "brazil.png",
+
         "gift": {
             "name": "Finger Heart",
-            "emoji": "🫶",
-            "points": 1
+            "points": 5
         },
+
+        "colors": {
+            "primary": "#009739",
+            "secondary": "#FEDD00",
+            "accent": "#002776"
+        },
+
         "progress": 0,
-        "wins": 0,
-        "color": "#009C3B"
+        "wins": 0
     },
     {
-        "id": 3,
+        "id": "argentina",
         "country": "Argentina",
         "emoji": "🇦🇷",
         "flag": "argentina.png",
+
         "gift": {
-            "name": "Perfume",
-            "emoji": "🧴",
-            "points": 1
+            "name": "Panda",
+            "points": 10
         },
+
+        "colors": {
+            "primary": "#74ACDF",
+            "secondary": "#FFFFFF",
+            "accent": "#74ACDF"
+        },
+
         "progress": 0,
-        "wins": 0,
-        "color": "#74ACDF"
+        "wins": 0
     },
     {
-        "id": 4,
+        "id": "mexico",
         "country": "México",
         "emoji": "🇲🇽",
         "flag": "mexico.png",
+
         "gift": {
-            "name": "Ice Cream Cone",
-            "emoji": "🍦",
-            "points": 1
+            "name": "Lion",
+            "points": 20
         },
+
+        "colors": {
+            "primary": "#006847",
+            "secondary": "#FFFFFF",
+            "accent": "#CE1126"
+        },
+
         "progress": 0,
-        "wins": 0,
-        "color": "#006847"
+        "wins": 0
     }
 ]

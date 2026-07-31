@@ -22,68 +22,76 @@
 
 <div id="app">
 
-    <header id="topBar">
+    <header id="header">
 
-        <div>
+        <div id="titleArea">
 
             <h1 id="gameTitle">
-
-                🌍 WORLD FLAG BATTLE
-
+                🌎 WORLD FLAG BATTLE
             </h1>
 
-            <div id="countryName">
-
+            <span id="gameSubtitle">
                 Elige tu país favorito
-
-            </div>
+            </span>
 
         </div>
 
         <div id="goalCard">
 
-            <span>🏁 Objetivo</span>
+            <span>🎯 Objetivo</span>
 
-            <strong>100%</strong>
+            <strong id="goalValue">
+                100%
+            </strong>
 
         </div>
 
     </header>
 
-    <main id="content">
+    <main id="mainLayout">
 
-        <section id="battlePanel">
+        <section id="countriesGrid">
 
-            <div id="countriesGrid">
-
-        <   /div>
+            <!-- Las tarjetas se crean automáticamente -->
 
         </section>
 
-        <aside id="rankingPanel">
+        <aside id="sidebar">
 
-            <h2>🏆 Top Fans</h2>
+            <section id="rankingPanel">
 
-            <ol id="rankingList">
+                <h2>🏆 Top Fans</h2>
 
-                <li>Esperando jugadores...</li>
+                <ol id="rankingList"></ol>
 
-            </ol>
+            </section>
 
         </aside>
 
     </main>
 
+    <footer id="giftArea">
+
+        <div id="giftNotification">
+
+            Esperando regalos...
+
+        </div>
+
+    </footer>
+
 </div>
 
+<div id="effectsContainer"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+
 <script src="js/socket.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/notifications.js"></script>
-<script src="js/ranking.js"></script>
 <script src="js/countries.js"></script>
+<script src="js/ranking.js"></script>
+<script src="js/notifications.js"></script>
 <script src="js/app.js"></script>
 
-<div id="effectsContainer"></div>
 </body>
 
 </html>

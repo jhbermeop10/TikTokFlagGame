@@ -73,18 +73,51 @@ server.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 });
 
-setInterval(() => {
+const DEBUG = true;
 
-    giftManager.addGift(
-        "JORGE",
-        "Rose"
-    );
+function random(list){
 
-}, 3000);
+    return list[
+        Math.floor(Math.random() * list.length)
+    ];
 
-/*
+}
 
-tiktok.connect((event) => {
+if (DEBUG) {
+
+    console.log("🧪 Modo DEBUG");
+
+    setInterval(() => {
+
+        giftManager.addGift(
+
+            random(fakeUsers),
+
+            random(fakeGifts)
+
+        );
+
+    }, 2000);
+
+} else {
+
+    tiktok.connect((event) => {
+
+        giftManager.addGift(
+
+            event.user,
+
+            event.gift
+
+        );
+
+    });
+
+}
+
+
+
+/*tiktok.connect((event) => {
 
     const state = giftManager.addGift(
         event.user,

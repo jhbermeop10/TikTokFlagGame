@@ -4,6 +4,20 @@ function getCountries() {
     return countries;
 }
 
+function getSortedCountries() {
+
+    return [...countries].sort((a, b) => {
+
+        if (b.progress !== a.progress) {
+            return b.progress - a.progress;
+        }
+
+        return b.wins - a.wins;
+
+    });
+
+}
+
 function getCountryByGift(giftName) {
 
     return countries.find(country =>
@@ -30,17 +44,11 @@ function processGift(giftName, goal) {
 
     }
 
-    if (country.progress === goal) {
+    const completed = country.progress >= goal;
+
+    if (completed) {
 
         country.wins++;
-
-        return {
-
-            country,
-
-            completed: true
-
-        };
 
     }
 
@@ -48,27 +56,23 @@ function processGift(giftName, goal) {
 
         country,
 
-        completed: false
+        completed
 
     };
 
 }
 
-function resetCountry(id){
+function resetCountry(country) {
 
-    const country = countries.find(c=>c.id===id);
-
-    if(country){
-
-        country.progress=0;
-
-    }
+    country.progress = 0;
 
 }
 
-module.exports={
+module.exports = {
 
     getCountries,
+
+    getSortedCountries,
 
     getCountryByGift,
 

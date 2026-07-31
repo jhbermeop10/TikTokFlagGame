@@ -47,3 +47,43 @@
     }
 
 }
+
+/* ===========================
+   Notificación regalo
+=========================== */
+
+.giftPopup{
+
+    animation:giftPopup 3s forwards;
+
+}
+
+/* ===========================
+   País líder
+=========================== */
+
+.countryLeader{
+
+    animation:leaderPulse .8s ease-in-out infinite alternate;
+
+}
+
+/* ===========================
+   País que recibió regalo
+=========================== */
+
+.countryPop{
+
+    animation:pop .35s ease;
+
+}
+
+/* ===========================
+   País ganador
+=========================== */
+
+.countryWinner{
+
+    animation:winnerFlash .5s linear infinite;
+
+}
