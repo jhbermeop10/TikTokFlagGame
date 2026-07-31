@@ -1,18 +1,10 @@
-const { getGameConfig } = require("./gameConfig");
+const countryService = require("./services/countryService");
 
-const config = getGameConfig();
+module.exports = {
 
-const gameState = {
+    countries: countryService.getCountries(),
 
-    progress: 0,
-
-    goal: config.goal,
-
-    country: config.country,
-
-    title: config.title,
-
-    flag: config.flag,
+    ranking: {},
 
     lastGift: null,
 
@@ -20,8 +12,10 @@ const gameState = {
 
     lastPoints: 0,
 
-    ranking: []
+    winner: null,
+
+    champion: null,
+
+    gameStatus: "playing"
 
 };
-
-module.exports = gameState;

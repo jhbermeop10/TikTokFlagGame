@@ -1,3 +1,5 @@
+const countryService = require("./countryService");
+
 const state = require("../state");
 const config = require("../config");
 
@@ -27,12 +29,17 @@ function processGift(user, giftName) {
     state.ranking = rankingService.getRanking();
 
     // Progreso
-    state.progress += gift.points;
+    const result = countryService.addProgress(
+    giftName,
+    gift.points,
+    config.goal
+    );
 
-    if (state.progress > config.goal) {
+    state.countries =
+    countryService.getSortedCountries();
 
-        state.progress = config.goal;
-
+    if (!result) {
+        return state;
     }
 
     // Último regalo
@@ -54,19 +61,36 @@ state.lastGift = {
 };
 
     // ¿Meta completada?
-    if (state.progress === config.goal) {
+    if (result.completed) {
 
-        console.log("🎉 META COMPLETADA");
+    console.log(`🏆 ${result.country.country} ganó`);
 
-        setTimeout(() => {
+    countryService.addWin(result.country);
 
-            state.progress = 0;
-            state.lastGift = null;
-            state.lastUser = null;
+    state.countries =
+    countryService.getSortedCountries();
 
-            socketManager.broadcastGameState(state);
+    state.winner = {
 
-        }, 5000);
+    id: result.country.id,
+
+    country: result.country.country,
+
+    emoji: result.country.emoji,
+
+    wins: result.country.wins + 1
+
+    };
+
+    setTimeout(() => {
+
+        countryService.resetCountry(result.country);
+
+        state.winner = null;
+
+        socketManager.broadcastGameState(state);
+
+        },5000);
 
     }
 

@@ -1,13 +1,11 @@
 {
-    "title": "Completa la Bandera",
-
-    "country": "Colombia",
-
-    "flag": "colombia.png",
+    "title": "World Flag Battle",
 
     "goal": 100,
 
-    "resetSeconds": 5,
+    "championshipGoal": 100,
 
-    "progressDirection": "left-to-right"
+    "countryCelebration": 5,
+
+    "championCelebration": 15
 }

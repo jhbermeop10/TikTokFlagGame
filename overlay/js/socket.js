@@ -1,31 +1,59 @@
 const socket = io();
 
-socket.on("progress",(data)=>{
+socket.on("progress", handleProgress);
 
-    updateProgress(data.percentage);
-    if(data.percentage >= 100){
+function handleProgress(data) {
 
-    showGoalCompleted();
+    if (data.countries) {
 
-    }
-    updateGameInfo(data);
+        if(document.getElementById("countriesGrid").children.length===0){
 
-    if(data.user){
+            renderCountries(data.countries);
 
-        showGift(
+        }else{
 
-            data.user,
+        updateCountries(data.countries);
 
-            data.gift
-
-        );
+        }
 
     }
 
-    updateRanking(
+    if (data.ranking) {
 
-        data.ranking
+        updateRanking(data.ranking);
+
+    }
+
+    updateGift(data);
+
+    updateWinner(data);
+
+}
+
+function updateGift(data){
+
+    if(!data.user) return;
+
+    showGift(
+
+        data.user,
+
+        data.gift,
+
+        data.points
 
     );
 
-});
+}
+
+function updateWinner(data){
+
+    if(!data.winner) return;
+
+    showWinner(
+
+        data.winner
+
+    );
+
+}

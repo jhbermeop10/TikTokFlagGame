@@ -25,25 +25,7 @@ function broadcastGameState(state) {
 
     if (!io) return;
 
-    io.emit("progress", {
-
-    percentage: state.progress,
-
-    user: state.lastUser,
-
-    gift: state.lastGift,
-
-    ranking: state.ranking,
-
-    title: state.title,
-
-    country: state.country,
-
-    goal: state.goal,
-
-    flag: state.flag
-
-    });
+    io.emit("progress", state);
 
 }
 
@@ -65,9 +47,6 @@ function registerEvents(socket){
         };
 
         configService.saveConfig(updated);
-
-        state.country = updated.country;
-        state.goal = updated.goal;
 
         broadcastGameState(state);
 
