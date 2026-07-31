@@ -1,221 +1,50 @@
+:root{
+
+    --primary:#00d26a;
+    --primary-dark:#00a754;
+
+    --text:#ffffff;
+    --text-dark:#111111;
+    --text-secondary:#d6d6d6;
+
+    --bg-card:rgba(20,20,20,.55);
+
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+
+    --radius:20px;
+
+}
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
 }
 
 body{
 
-     margin:0;
     overflow:hidden;
+
     background:transparent;
-    font-family:Segoe UI,Arial,sans-serif;
+
+    font-family:"Segoe UI",sans-serif;
 
 }
 
-#overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    padding:40px;
-
-}
-
-#header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.35);
-
-    padding:20px 30px;
-
-    border-radius:18px;
-
-    margin-bottom:30px;
-
-}
-
-#goal{
-
-    font-size:22px;
-
-}
-
-#flagArea{
-
-    width:900px;
-
-    position:relative;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-
-}
-
-#flag{
-
-    width:100%;
+img{
 
     display:block;
 
-}
-
-#mask{
-
-    position:absolute;
-
-    top:0;
-
-    right:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(255,255,255,.92);
-
-    transition:width .4s ease;
-
-}
-
-#progressContainer{
-
-    height:25px;
-
-    background:#222;
-
-    border-radius:15px;
-
-    margin-top:20px;
-
-    overflow:hidden;
-
-}
-
-#progress{
-
-    width:0%;
-
-    height:100%;
-
-    background:linear-gradient(90deg,#00e676,#00c853);
-
-    transition:.3s;
-
-}
-
-#percentage{
-
-    text-align:center;
-
-    font-size:38px;
-
-    margin-top:10px;
-
-    font-weight:bold;
-
-}
-
-#notification{
-
-    margin-top:20px;
-
-    padding:18px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(12px);
-
-    font-size:22px;
-
-}
-
-#ranking{
-
-    margin-top:20px;
-
-    padding:20px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.12);
-
-    backdrop-filter:blur(12px);
-
-}
-
-#ranking h2{
-
-    margin-bottom:10px;
-
-}
-
-#ranking li{
-
-    margin-left:20px;
-
-    padding:5px;
-
-}
-
-#headerLeft{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-#headerLeft h1{
-
-    margin:0;
-
-    font-size:46px;
-
-    color:white;
-
-}
-
-#countryName{
-
-    margin-top:8px;
-
-    font-size:24px;
-
-    color:#f0f0f0;
-
-}
-
-#goal{
-
-    text-align:center;
-
-    color:white;
-
-    font-size:24px;
-
-}
-
-#goalValue{
-
-    font-size:36px;
-
-    font-weight:bold;
+    user-select:none;
 
 }

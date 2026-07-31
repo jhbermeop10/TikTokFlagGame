@@ -1,46 +1,32 @@
-@keyframes shine{
-
-    from{
-
-        transform:translateX(-100%);
-
-    }
-
-    to{
-
-        transform:translateX(250%);
-
-    }
-
-}
-
-.show{
-
-    animation: popup .45s ease;
-
-}
-
-@keyframes popup{
+@keyframes giftPopup{
 
     0%{
 
         opacity:0;
 
-        transform:translateY(30px) scale(.9);
+        transform:translate(-50%,40px);
 
     }
 
-    60%{
+    15%{
 
-        transform:translateY(-5px) scale(1.03);
+        opacity:1;
+
+        transform:translate(-50%,0);
+
+    }
+
+    85%{
+
+        opacity:1;
 
     }
 
     100%{
 
-        opacity:1;
+        opacity:0;
 
-        transform:translateY(0) scale(1);
+        transform:translate(-50%,-40px);
 
     }
 

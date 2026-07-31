@@ -1,3 +1,9 @@
+const configService = require("./services/configService");
+
+const gameConfig = require("./gameConfig");
+
+gameConfig.loadGameConfig();
+
 const gameState = {
     progress: 0,
     goal: 100,
@@ -49,18 +55,14 @@ const fakeGifts = [
 
 // Servir la carpeta overlay
 app.use(express.static("overlay"));
+app.use("/admin", express.static("overlay/admin"));
 
-io.on("connection", (socket) => {
-    console.log("✅ Overlay conectado");
+app.get("/game-config", (req, res) => {
 
-    socket.emit("progress", {
-        percentage: 0,
-        country: "Colombia"
-    });
+    res.json(
+        configService.getConfig()
+    );
 
-    socket.on("disconnect", () => {
-        console.log("❌ Overlay desconectado");
-    });
 });
 
 server.listen(PORT, () => {
@@ -70,6 +72,17 @@ server.listen(PORT, () => {
     console.log("===============================");
     console.log(`Servidor: http://localhost:${PORT}`);
 });
+
+setInterval(() => {
+
+    giftManager.addGift(
+        "JORGE",
+        "Rose"
+    );
+
+}, 3000);
+
+/*
 
 tiktok.connect((event) => {
 
@@ -82,4 +95,4 @@ tiktok.connect((event) => {
         `${event.user} envió ${event.gift}`
     );
 
-});
+});*/

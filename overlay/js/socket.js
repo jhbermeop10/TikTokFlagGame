@@ -1,22 +1,31 @@
 const socket = io();
 
-socket.on("progress", (data) => {
+socket.on("progress",(data)=>{
 
     updateProgress(data.percentage);
+    if(data.percentage >= 100){
 
-    if (data.user) {
+    showGoalCompleted();
+
+    }
+    updateGameInfo(data);
+
+    if(data.user){
 
         showGift(
-            data.user,
-            data.gift,
-            data.points
-        );
 
-        updateRanking(
             data.user,
-            data.points
+
+            data.gift
+
         );
 
     }
+
+    updateRanking(
+
+        data.ranking
+
+    );
 
 });

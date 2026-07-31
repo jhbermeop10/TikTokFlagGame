@@ -1,120 +1,155 @@
-#topBar{
-
-    background:rgba(20,20,20,.60);
-
-    border-radius:20px;
-
-    padding:25px 35px;
-
-    backdrop-filter:blur(12px);
-
-}
-
-#gameTitle{
-
-    color:white;
-
-    font-size:48px;
-
-    margin:0;
-
-}
-
-#countryName{
-
-    color:#dddddd;
-
-    font-size:24px;
-
-    margin-top:8px;
-
-}
-
-#goalCard{
-
-    text-align:center;
-
-    color:white;
-
-}
-
-#goalCard span{
-
-    display:block;
-
-    font-size:20px;
-
-}
-
-#goalCard strong{
-
-    font-size:42px;
-
-}
-
 #flagContainer{
 
-    width:100%;
+    width:720px;
+    height:430px;
 
-    height:520px;
-
-    background:#1b1b1b;
-
-    border-radius:20px;
+    position:relative;
 
     overflow:hidden;
 
-}
+    border-radius:22px;
 
-#flagReveal{
-
-    width:0%;
-
-    height:100%;
-
-    overflow:hidden;
-
-    transition:width .5s ease;
+    box-shadow:var(--shadow);
+    margin:0 auto;
 
 }
 
 #flag{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
 }
 
+#flagMask{
+
+    position:absolute;
+
+    top:0;
+
+    right:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:white;
+
+    transition:width .4s cubic-bezier(.25,.8,.25,1);
+
+}
+
 #progressArea{
 
-    margin-top:25px;
+    width:720px;
+
+    margin-top:20px auto 0;
 
 }
 
 #progressBar{
 
-    height:32px;
+    height:28px;
 
-    background:#2b2b2b;
+    background:#222;
 
-    border-radius:30px;
+    border-radius:18px;
 
     overflow:hidden;
-
-    position:relative;
 
 }
 
 #progressFill{
 
+    display:block;
+
     width:0%;
 
     height:100%;
 
-    background:linear-gradient(90deg,#00d26a,#00ff95);
+    background:linear-gradient(
+        90deg,
+        #00e676,
+        #00c853
+    );
+
+    transition:width .35s ease;
+
+}
+
+#progressText{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:white;
+
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+
+}
+
+#giftNotification{
+
+    width:720px;
+
+    margin-top:25px auto 0;
+
+    padding:18px;
+
+    background:var(--bg-card);
+
+    border-radius:18px;
+
+    color:white;
+
+}
+
+#rankingPanel{
+
+    background:rgba(0,0,0,.55);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    color:white;
+
+    min-height:250px;
+
+}
+
+#rankingPanel h2{
+
+    margin-bottom:15px;
+
+}
+
+#rankingList{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+#rankingList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -124,56 +159,78 @@
 
     inset:0;
 
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+    pointer-events:none;
 
-    animation:shine 2s linear infinite;
+    box-shadow:inset 0 0 12px rgba(255,255,255,.2);
 
 }
 
-#progressText{
+.giftCard{
 
-    margin-top:15px;
+    position:fixed;
+
+    top:70px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:rgba(25,25,25,.92);
 
     color:white;
 
-    font-size:40px;
+    padding:18px 28px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.45);
+
+    animation:giftPopup 3s forwards;
+
+    z-index:1000;
+
+}
+
+.giftEmoji{
+
+    font-size:42px;
 
     text-align:center;
 
 }
 
-#giftNotification{
+.giftUser{
 
-    margin-top:25px;
+    margin-top:8px;
 
-    background:rgba(255,255,255,.08);
+    font-size:24px;
 
-    color:white;
+    font-weight:bold;
 
-    padding:18px;
+    text-align:center;
 
-    border-radius:15px;
+}
+
+.giftName{
+
+    margin-top:6px;
+
+    font-size:20px;
+
+    text-align:center;
+
+}
+
+.giftPoints{
+
+    margin-top:8px;
 
     font-size:28px;
 
-}
+    color:#00e676;
 
-#rankingPanel{
+    font-weight:bold;
 
-    background:rgba(20,20,20,.60);
-
-    border-radius:20px;
-
-    padding:20px;
-
-    color:white;
-
-}
-
-#rankingPanel li{
-
-    margin:12px 0;
-
-    font-size:24px;
+    text-align:center;
 
 }

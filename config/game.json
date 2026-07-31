@@ -1,0 +1,13 @@
+{
+    "title": "Completa la Bandera",
+
+    "country": "Colombia",
+
+    "flag": "colombia.png",
+
+    "goal": 100,
+
+    "resetSeconds": 5,
+
+    "progressDirection": "left-to-right"
+}

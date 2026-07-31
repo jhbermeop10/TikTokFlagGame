@@ -1,19 +1,28 @@
-const notification = document.getElementById("giftNotification");
+window.showGift = function(user, gift){
 
-window.showGift = function(user, gift, points) {
+    if(!gift){
+        return;
+    }
 
-    notification.innerHTML = `
-        <div style="font-size:34px">🎁 ${user}</div>
-        <div style="margin-top:8px">${gift}</div>
-        <div style="margin-top:8px;color:#00ff88">
-            +${points} puntos
-        </div>
+    const container = document.getElementById("effectsContainer");
+
+    const card = document.createElement("div");
+
+    card.className = "giftCard";
+
+    card.innerHTML = `
+        <div class="giftEmoji">${gift.emoji}</div>
+        <div class="giftUser">${user}</div>
+        <div class="giftName">${gift.name}</div>
+        <div class="giftPoints">+${gift.points}</div>
     `;
 
-    notification.classList.remove("show");
+    container.appendChild(card);
 
-    void notification.offsetWidth;
+    setTimeout(() => {
 
-    notification.classList.add("show");
+        card.remove();
 
-};
+    }, 3000);
+
+}

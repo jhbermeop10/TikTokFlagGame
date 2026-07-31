@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Administrador TikTok Flag Game</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎮 Panel de Administración</h1>
+
+    <div class="card">
+
+        <label>País</label>
+
+        <input id="country">
+
+    </div>
+
+    <div class="card">
+
+        <label>Meta (%)</label>
+
+        <input
+            id="goal"
+            type="number">
+
+    </div>
+
+    <button id="save">
+
+        💾 Guardar
+
+    </button>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="admin.js"></script>
+
+</body>
+
+</html>
