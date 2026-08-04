@@ -4,22 +4,26 @@ window.updateRanking = function(players){
 
     list.innerHTML = "";
 
-    players.forEach((player,index)=>{
+    const medals = ["🥇","🥈","🥉"];
 
-        list.innerHTML += `
-            <li>
+    players
+        .slice(0,3)
+        .forEach((player,index)=>{
 
-                ${index+1}. ${player.user}
+            list.innerHTML += `
+                <li class="rankingItem">
 
-                <strong>
+                    <span class="rankingMedal">
+                        ${medals[index]}
+                    </span>
 
-                    ${player.points}
+                    <span class="rankingName">
+                        ${player.user}
+                    </span>
 
-                </strong>
+                </li>
+            `;
 
-            </li>
-        `;
-
-    });
+        });
 
 }

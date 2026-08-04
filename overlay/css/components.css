@@ -4,19 +4,11 @@
 
 .countryCard{
 
-    background:rgba(25,25,25,.82);
-
-    border-radius:16px;
-
     padding:12px 15px;
 
-    display:flex;
+    border-radius:18px;
 
-    flex-direction:column;
-
-    gap:10px;
-
-    transition:.25s;
+    margin-bottom:10px;
 
 }
 
@@ -56,31 +48,7 @@
 
     align-items:center;
 
-}
-
-.countryInfo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-.countryEmoji{
-
-    font-size:28px;
-
-}
-
-.countryName{
-
-    font-size:26px;
-
-    font-weight:bold;
-
-    color:white;
+    margin-bottom:6px;
 
 }
 
@@ -102,17 +70,6 @@
    Bandera
 =========================== */
 
-.countryFlag{
-
-    width:100%;
-
-    height:42px;
-
-    object-fit:cover;
-
-    border-radius:8px;
-
-}
 
 /* ===========================
    Barra
@@ -120,12 +77,11 @@
 
 .countryProgress{
 
-    height:14px;
-
+    flex:1;
+    min-width:0;
+    height:16px;
     background:#222;
-
-    border-radius:12px;
-
+    border-radius:20px;
     overflow:hidden;
 
 }
@@ -138,19 +94,7 @@
 
     border-radius:20px;
 
-    background:linear-gradient(
-
-        90deg,
-
-        #00ff84,
-
-        #00d26a,
-
-        #00b85d
-
-    );
-
-    transition:width .45s;
+    transition:width .4s ease;
 
 }
 
@@ -158,21 +102,13 @@
    Pie
 =========================== */
 
-.countryFooter{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
 .percent{
 
-    font-size:18px;
-
+    width:55px;
+    color:rgb(3, 3, 3);
+    text-align:right;
     font-weight:bold;
+    flex-shrink:0;
 
 }
 
@@ -190,7 +126,7 @@
 
     align-items:center;
 
-    gap:10px;
+    gap:8px;
 
 }
 
@@ -216,15 +152,9 @@
 
 }
 
-.countryEmoji{
-
-    font-size:22px;
-
-}
-
 .countryName{
 
-    font-size:22px;
+    font-size:24px;
 
     font-weight:700;
 
@@ -235,5 +165,110 @@
     font-size:18px;
 
     color:#ffd54f;
+
+}
+
+.countryRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.moveIcon{
+
+    width:26px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+.countryIcon{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-right:10px;
+
+    flex-shrink:0;
+
+}
+
+.countryProgressRow{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:8px;
+    width:100%;
+
+}
+
+.giftIcon{
+
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    flex-shrink:0;
+
+}
+
+#rankingList{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.rankingItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 12px;
+
+    margin-bottom:8px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+}
+
+.rankingMedal{
+
+    font-size:24px;
+
+    width:32px;
+
+    text-align:center;
+
+}
+
+.rankingName{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
 
 }

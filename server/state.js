@@ -4,13 +4,11 @@ module.exports = {
 
     countries: countryService.getCountries(),
 
-    ranking: {},
+    ranking: [],
 
     lastGift: null,
 
     lastUser: null,
-
-    lastPoints: 0,
 
     winner: null,
 

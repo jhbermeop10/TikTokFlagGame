@@ -1,5 +1,7 @@
 const countryElements = {};
 
+const previousPositions = {};
+
 window.renderCountries = function (countries) {
 
     const grid = document.getElementById("countriesGrid");
@@ -10,20 +12,11 @@ window.renderCountries = function (countries) {
     if (grid.children.length === 0) {
 
     countries
-        .sort((a, b) => {
-
-            if (b.progress !== a.progress) {
-                return b.progress - a.progress;
-            }
-
-            return b.wins - a.wins;
-
-        })
-        .forEach((country, index) => {
+        .forEach((country) => {
 
             const card = createCountryCard(
                 country,
-                index + 1
+                country.position
             );
 
             grid.appendChild(card);
@@ -41,21 +34,15 @@ window.updateCountries = function (countries) {
 
     const grid = document.getElementById("countriesGrid");
 
-    countries.sort((a, b) => {
-
-        if (b.progress !== a.progress) {
-            return b.progress - a.progress;
-        }
-
-        return b.wins - a.wins;
-
-    });
-
-    countries.forEach((country, index) => {
+    countries.forEach((country) => {
 
         const ui = countryElements[country.id];
 
         if (!ui) return;
+
+        const oldPosition = previousPositions[country.id];
+
+        previousPositions[country.id] = country.position;
 
         ui.progress.style.width = country.progress + "%";
 
@@ -63,17 +50,37 @@ window.updateCountries = function (countries) {
 
         ui.wins.textContent = "🏆 " + country.wins;
 
-        ui.position.textContent = "#" + (index + 1);
+        ui.move.textContent = "";
 
-        // Destacar al líder
-        ui.card.classList.remove("countryLeader");
+        if (oldPosition !== undefined) {
 
-        if (index === 0) {
-            ui.card.classList.add("countryLeader");
-        }
+            if (country.position < oldPosition) {
 
-        // Mover la tarjeta al nuevo orden
-        grid.appendChild(ui.card);
+                ui.move.textContent = "⬆️";
+
+            }else if (country.position > oldPosition) {
+
+                ui.move.textContent = "⬇️";
+
+            }
+
+    }
+
+    ui.card.classList.remove("countryLeader");
+
+    if (country.position === 1) {
+
+    ui.card.classList.add("countryLeader");
+    ui.position.innerHTML = "👑";
+
+    } else {
+
+    ui.card.classList.remove("countryLeader");
+    ui.position.innerHTML = "#" + country.position;
+
+    }
+
+    grid.appendChild(ui.card);
 
     });
 
@@ -85,6 +92,8 @@ function createCountryCard(country, position) {
 
     card.className = "countryCard";
 
+    card.dataset.country = country.id;
+
     card.innerHTML = `
 
 <div class="countryTop">
@@ -92,12 +101,13 @@ function createCountryCard(country, position) {
     <div class="countryLeft">
 
         <span class="countryPosition">
-            #${position}
+            ${position===1 ? "👑" : "#" + position}
         </span>
 
-        <span class="countryEmoji">
-            ${country.emoji}
-        </span>
+        <img
+    class="countryIcon"
+    src="assets/icons/${country.icon}"
+    alt="${country.country}">
 
         <span class="countryName">
             ${country.country}
@@ -105,31 +115,33 @@ function createCountryCard(country, position) {
 
     </div>
 
-    <div class="countryWins wins">
+    <div class="countryRight">
 
-        🏆 ${country.wins}
+        <span class="moveIcon"></span>
+
+        <span class="countryWins wins">
+            🏆 ${country.wins}
+        </span>
 
     </div>
 
 </div>
 
-<img
-    class="countryFlag"
-    src="assets/flags/${country.flag}"
-    alt="${country.country}">
+<div class="countryProgressRow">
 
-<div class="countryProgress">
+    <img
+    class="giftIcon"
+    src="assets/gifts/${country.gift.image}"
+    alt="${country.gift.name}">
 
-    <div class="countryFill"></div>
+    <div class="countryProgress">
 
-</div>
+        <div class="countryFill"></div>
 
-<div class="countryFooter">
+    </div>
 
     <span class="percent">
-
         ${country.progress}%
-
     </span>
 
 </div>
@@ -148,17 +160,11 @@ function createCountryCard(country, position) {
 
     wins: card.querySelector(".wins"),
 
-    position: card.querySelector(".countryPosition")
+    position: card.querySelector(".countryPosition"),
+
+    move: card.querySelector(".moveIcon")
 
 };
-
-countryElements[country.id].progress.style.background =
-`linear-gradient(
-90deg,
-${country.colors.primary},
-${country.colors.secondary},
-${country.colors.accent}
-)`;
 
     countryElements[country.id].progress.style.width =
         country.progress + "%";

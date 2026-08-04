@@ -1,6 +1,6 @@
 {
     "Rose": {
-        "points": 1,
+        "points": 0.5,
         "rarity": "common",
         "image": "rose.png",
         "sound": "rose.mp3",
@@ -9,7 +9,7 @@
     },
 
     "TikTok": {
-        "points": 1,
+        "points": 0.5,
         "rarity": "common",
         "image": "tiktok.png",
         "sound": "coin.mp3",
@@ -18,7 +18,7 @@
     },
 
     "Finger Heart": {
-        "points": 5,
+        "points": 0.5,
         "rarity": "rare",
         "image": "heart.png",
         "sound": "heart.mp3",
@@ -27,7 +27,7 @@
     },
 
     "Panda": {
-        "points": 20,
+        "points": 0.5,
         "rarity": "epic",
         "image": "panda.png",
         "sound": "panda.mp3",
@@ -36,7 +36,7 @@
     },
 
     "Lion": {
-        "points": 100,
+        "points": 0.5,
         "rarity": "legendary",
         "image": "lion.png",
         "sound": "lion.mp3",

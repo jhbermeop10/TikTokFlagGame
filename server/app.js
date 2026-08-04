@@ -4,12 +4,6 @@ const gameConfig = require("./gameConfig");
 
 gameConfig.loadGameConfig();
 
-const gameState = {
-    progress: 0,
-    goal: 100,
-    ranking: {}
-};
-
 const path = require("path");
 const dotenv = require("dotenv");
 
@@ -34,24 +28,7 @@ socketManager.initialize(io);
 
 const PORT = process.env.PORT || 3000;
 
-let progress = 0;
-
 const giftManager = require("./giftManager");
-
-const fakeUsers = [
-    "Carlos",
-    "Laura",
-    "Andrés",
-    "Valentina",
-    "Jorge"
-];
-
-const fakeGifts = [
-    "Rose",
-    "Finger Heart",
-    "Panda",
-    "Lion"
-];
 
 // Servir la carpeta overlay
 app.use(express.static("overlay"));
@@ -73,31 +50,11 @@ server.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 });
 
-const DEBUG = true;
-
-function random(list){
-
-    return list[
-        Math.floor(Math.random() * list.length)
-    ];
-
-}
+const DEBUG = false;
 
 if (DEBUG) {
 
-    console.log("🧪 Modo DEBUG");
-
-    setInterval(() => {
-
-        giftManager.addGift(
-
-            random(fakeUsers),
-
-            random(fakeGifts)
-
-        );
-
-    }, 2000);
+    require("./debug").start();
 
 } else {
 
@@ -114,18 +71,3 @@ if (DEBUG) {
     });
 
 }
-
-
-
-/*tiktok.connect((event) => {
-
-    const state = giftManager.addGift(
-        event.user,
-        event.gift
-    );
-
-    console.log(
-        `${event.user} envió ${event.gift}`
-    );
-
-});*/

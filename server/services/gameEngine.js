@@ -15,7 +15,7 @@ function processGift(user, giftName) {
 
     if (!result) {
 
-        console.log("Regalo sin configurar:", giftName);
+        console.log(`No existe un país asociado a ese regalo: ${giftName}`);
 
         return state;
 
@@ -39,9 +39,13 @@ function processGift(user, giftName) {
 
         name: result.country.gift.name,
 
-        emoji: result.country.gift.emoji,
+        image: result.country.gift.image,
 
-        points: result.country.gift.points
+        points: result.country.gift.points,
+
+        country: result.country.country,
+
+        countryId: result.country.id
 
     };
 
@@ -75,6 +79,15 @@ function processGift(user, giftName) {
         }, 5000);
 
     }
+
+    /*console.log("Broadcast desde gameEngine");
+    socketManager.broadcastGameState(state);
+
+    console.log(
+        state.countries.map(c =>
+        `${c.country} | Wins:${c.wins} | Progress:${c.progress}`
+        )
+    );*/
 
     return state;
 

@@ -6,35 +6,62 @@ function getCountries() {
 
 function getSortedCountries() {
 
-    return [...countries].sort((a, b) => {
+    const sorted = [...countries].sort((a, b) => {
 
+        // 1. Más victorias
+        if (b.wins !== a.wins) {
+            return b.wins - a.wins;
+        }
+
+        // 2. Más progreso
         if (b.progress !== a.progress) {
             return b.progress - a.progress;
         }
 
-        return b.wins - a.wins;
+        // 3. Orden alfabético
+        return a.country.localeCompare(b.country);
 
     });
 
+    // Asignar posición oficial
+    sorted.forEach((country, index) => {
+
+        country.position = index + 1;
+
+    });
+
+    return sorted;
+
 }
 
-function getCountryByGift(giftName) {
+function getCountryByGift(giftName){
+
+    const gift = giftName
+        .trim()
+        .toLowerCase();
 
     return countries.find(country =>
-        country.gift.name === giftName
+
+        country.gift.name
+            .trim()
+            .toLowerCase() === gift
+
     );
 
 }
 
 function processGift(giftName, goal) {
 
-    const country = getCountryByGift(giftName);
+    console.log(`🎁 Regalo recibido: ${giftName}`);
 
-    if (!country) {
+    const country =
+    getCountryByGift(giftName);
 
-        return null;
+        if(!country){
 
-    }
+            return null;
+
+        }
 
     country.progress += country.gift.points;
 

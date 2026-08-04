@@ -1,82 +1,127 @@
 [
-    {
-        "id": "colombia",
-        "country": "Colombia",
-        "emoji": "🇨🇴",
-        "flag": "colombia.png",
+  {
+    "id": "colombia",
+    "country": "Colombia",
+    "icon": "colombia.png",
 
-        "gift": {
-            "name": "Rose",
-            "points": 1
-        },
-
-        "colors": {
-            "primary": "#FCD116",
-            "secondary": "#003893",
-            "accent": "#CE1126"
-        },
-
-        "progress": 0,
-        "wins": 0
+    "gift": {
+      "name": "White Rose",
+      "image": "white-rose.png",
+      "points": 0.5
     },
-    {
-        "id": "brazil",
-        "country": "Brasil",
-        "emoji": "🇧🇷",
-        "flag": "brazil.png",
 
-        "gift": {
-            "name": "Finger Heart",
-            "points": 5
-        },
-
-        "colors": {
-            "primary": "#009739",
-            "secondary": "#FEDD00",
-            "accent": "#002776"
-        },
-
-        "progress": 0,
-        "wins": 0
+    "colors": {
+      "primary": "#FCD116",
+      "secondary": "#003893",
+      "accent": "#CE1126"
     },
-    {
-        "id": "argentina",
-        "country": "Argentina",
-        "emoji": "🇦🇷",
-        "flag": "argentina.png",
 
-        "gift": {
-            "name": "Panda",
-            "points": 10
-        },
+    "progress": 0,
+    "wins": 0
+  },
 
-        "colors": {
-            "primary": "#74ACDF",
-            "secondary": "#FFFFFF",
-            "accent": "#74ACDF"
-        },
+  {
+    "id": "mexico",
+    "country": "México",
+    "icon": "mexico.png",
 
-        "progress": 0,
-        "wins": 0
+    "gift": {
+      "name": "Rose",
+      "image": "rose.png",
+      "points": 0.5
     },
-    {
-        "id": "mexico",
-        "country": "México",
-        "emoji": "🇲🇽",
-        "flag": "mexico.png",
 
-        "gift": {
-            "name": "Lion",
-            "points": 20
-        },
+    "colors": {
+      "primary": "#006847",
+      "secondary": "#FFFFFF",
+      "accent": "#CE1126"
+    },
 
-        "colors": {
-            "primary": "#006847",
-            "secondary": "#FFFFFF",
-            "accent": "#CE1126"
-        },
+    "progress": 0,
+    "wins": 0
+  },
 
-        "progress": 0,
-        "wins": 0
-    }
+  {
+    "id": "guatemala",
+    "country": "Guatemala",
+    "icon": "guatemala.png",
+
+    "gift": {
+      "name": "TikTok",
+      "image": "TikTok.png",
+      "points": 0.5
+    },
+
+    "colors": {
+      "primary": "#4997D0",
+      "secondary": "#FFFFFF",
+      "accent": "#4997D0"
+    },
+
+    "progress": 0,
+    "wins": 0
+  },
+
+  {
+    "id": "elsalvador",
+    "country": "El Salvador",
+    "icon": "salvador.png",
+
+    "gift": {
+      "name": "Te Adoro",
+      "image": "te-adoro.png",
+      "points": 0.5
+    },
+
+    "colors": {
+      "primary": "#0047AB",
+      "secondary": "#FFFFFF",
+      "accent": "#0047AB"
+    },
+
+    "progress": 0,
+    "wins": 0
+  },
+
+  {
+    "id": "nicaragua",
+    "country": "Nicaragua",
+    "icon": "nicaragua.png",
+
+    "gift": {
+      "name": "Ice Cream Cone",
+      "image": "Ice-Cream-Cone.png",
+      "points": 0.5
+    },
+
+    "colors": {
+      "primary": "#0067C6",
+      "secondary": "#FFFFFF",
+      "accent": "#0067C6"
+    },
+
+    "progress": 0,
+    "wins": 0
+  },
+
+  {
+    "id": "usa",
+    "country": "Estados Unidos",
+    "icon": "usa.png",
+
+    "gift": {
+      "name": "Wink",
+      "image": "wink.png",
+      "points": 0.5
+    },
+
+    "colors": {
+      "primary": "#B22234",
+      "secondary": "#FFFFFF",
+      "accent": "#3C3B6E"
+    },
+
+    "progress": 0,
+    "wins": 0
+  }
 ]

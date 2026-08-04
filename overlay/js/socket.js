@@ -32,28 +32,12 @@ function handleProgress(data) {
 
 function updateGift(data){
 
-    if(!data.user) return;
+    if(!data.lastGift) return;
 
-    showGift(
-
-        data.user,
-
-        data.gift,
-
-        data.points
-
-    );
+    showGift(data);
 
 }
 
 function updateWinner(data){
-
-    if(!data.winner) return;
-
-    showWinner(
-
-        data.winner
-
-    );
-
+    return;
 }

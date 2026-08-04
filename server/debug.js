@@ -4,19 +4,40 @@ const socketManager = require("./socket");
 const users = [
 
     "Jorge",
-    "Carlos",
-    "Laura",
-    "Andrés",
-    "Valentina"
+    "Jorge",
+    "Jorge",
+
+    "Maria",
+    "Maria",
+
+    "Humberto",
+    "Humberto",
+
+    "Nedrey",
+
+    "Ana"
 
 ];
 
 const gifts = [
 
     "Rose",
-    "Finger Heart",
-    "GG",
-    "Perfume"
+    "Rose",
+    "Rose",
+    "Rose",
+
+    "White Rose",
+    "White Rose",
+    "White Rose",
+
+    "TikTok",
+    "TikTok",
+
+    "Te Adoro",
+
+    "Ice Cream Cone",
+
+    "Wink"
 
 ];
 
@@ -44,7 +65,7 @@ function start(){
 
         socketManager.broadcastGameState(state);
 
-    },1500);
+    },1000);
 
 }
 
