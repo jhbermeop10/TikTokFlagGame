@@ -30,6 +30,11 @@ const PORT = process.env.PORT || 3000;
 
 const giftManager = require("./giftManager");
 
+const countryService = require("./services/countryService");
+const state = require("./state");
+
+state.countries = countryService.getSortedCountries();
+
 // Servir la carpeta overlay
 app.use(express.static("overlay"));
 app.use("/admin", express.static("overlay/admin"));
@@ -50,7 +55,7 @@ server.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 });
 
-const DEBUG = false;
+const DEBUG = true;
 
 if (DEBUG) {
 
