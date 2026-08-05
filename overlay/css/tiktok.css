@@ -12,6 +12,20 @@
 
 }
 
+/*====================================
+  Espacio para la interfaz de TikTok
+====================================*/
+
+#topSafeArea{
+
+    width:100%;
+
+    height:210px;   /* <-- cambia este valor */
+
+    flex-shrink:0;
+
+}
+
 #app{
 
     flex:1;
@@ -162,6 +176,12 @@ body{
     display:flex;
 
     flex-direction:column;
+
+        background:
+    linear-gradient(
+    180deg,
+    #ffffff,
+    #f5f7fb);
 
 }
 
