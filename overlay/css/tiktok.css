@@ -2,15 +2,15 @@
 
     width:100%;
 
-    padding:18px;
+    padding:0 10px;
+
+    margin-top:140px;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:16px;
-
-    box-sizing:border-box;
+    gap:10px;
 
 }
 
@@ -22,15 +22,17 @@
 
     align-items:center;
 
-    gap:6px;
+    gap:3px;
 
 }
 
 #gameTitle{
 
-    font-size:34px;
+    font-size:24px;
 
-    font-weight:900;
+    font-weight:800;
+
+    line-height:1.1;
 
     text-align:center;
 
@@ -40,7 +42,9 @@
 
 #gameSubtitle{
 
-    font-size:16px;
+    font-size:12px;
+
+    opacity:.6;
 
     color:#666;
 
@@ -50,15 +54,15 @@
 
     width:100%;
 
-    padding:14px;
+    padding:6px;
 
     text-align:center;
 
-    border-radius:18px;
+    border-radius:12px;
 
     background:white;
 
-    font-size:22px;
+    font-size:16px;
 
     font-weight:bold;
 
@@ -127,9 +131,9 @@ body{
 
     border-radius:22px;
 
-    padding:14px;
+    padding:6px 10px;
 
-    margin-bottom:10px;
+    margin-bottom:5px;
 
     box-shadow:
 
