@@ -1,10 +1,24 @@
-#app{
+/*====================================
+    ZONA SEGURA SUPERIOR TIKTOK
+====================================*/
+
+#liveSafeArea{
 
     width:100%;
 
-    padding:0 10px;
+    height:85px;
 
-    margin-top:140px;
+    flex-shrink:0;
+
+}
+
+#app{
+
+    flex:1;
+
+    width:100%;
+
+    padding:10px;
 
     display:flex;
 
@@ -93,7 +107,23 @@
 
 #rankingPanel{
 
-    width:100%;
+    padding:8px;
+
+}
+
+#rankingPanel h2{
+
+    font-size:18px;
+
+    margin-bottom:6px;
+
+}
+
+#rankingList li{
+
+    font-size:14px;
+
+    margin-bottom:4px;
 
 }
 
@@ -103,7 +133,7 @@
 
 }
 
-body{
+/*body{
 
     width:390px;
     height:844px;
@@ -118,6 +148,20 @@ body{
     180deg,
     #ffffff,
     #f5f7fb);
+
+}*/
+
+body{
+
+    width:390px;
+
+    min-height:844px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
 
 }
 
@@ -175,7 +219,7 @@ body{
 
 .countryName{
 
-    font-size:22px;
+    font-size:16px;
 
     font-weight:800;
 
@@ -185,11 +229,11 @@ body{
 
 .countryPosition{
 
-    width:28px;
+    width:24px;
 
     text-align:center;
 
-    font-size:16px;
+    font-size:15px;
 
 }
 
@@ -205,7 +249,7 @@ body{
 
 .countryWins{
 
-    font-size:15px;
+    font-size:13px;
 
     color:#ff9800;
 
@@ -213,7 +257,7 @@ body{
 
 .countryProgressRow{
 
-    margin-top:8px;
+    margin-top:6px;
 
     display:flex;
 
@@ -237,7 +281,7 @@ body{
 
     flex:1;
 
-    height:16px;
+    height:8px;
 
     background:#ececec;
 
