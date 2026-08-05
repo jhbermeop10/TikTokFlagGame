@@ -289,11 +289,11 @@ body{
 
 .giftIcon{
 
-    width:18px;
-
-    height:18px;
+    width:48px;
+    height:48px;
 
     object-fit:contain;
+    flex-shrink:0;
 
 }
 
