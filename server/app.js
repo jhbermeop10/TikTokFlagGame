@@ -55,7 +55,7 @@ server.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 });
 
-const DEBUG = true;
+const DEBUG = false;
 
 if (DEBUG) {
 
