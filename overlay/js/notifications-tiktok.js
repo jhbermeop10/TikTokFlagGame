@@ -9,13 +9,18 @@ window.showGift = function(data){
         return;
     }
 
-    const container = document.getElementById("effectsContainer");
+    const container =
+    document.getElementById("effectsContainer");
+
+    const giftContainer =
+    document.getElementById("giftCardContainer");
 
  // Eliminar cualquier tarjeta anterior
     container.querySelectorAll(".giftCard").forEach(card => card.remove());
 
     // Eliminar cualquier regalo volando anterior
-    container.querySelectorAll(".flyingGift").forEach(gift => gift.remove());
+    document.querySelectorAll(".flyingGift")
+    .forEach(gift => gift.remove());
 
     const card = document.createElement("div");
 
@@ -39,22 +44,46 @@ window.showGift = function(data){
     }
 
     card.innerHTML = `
-        <div class="giftImage">
 
-            <img
-                src="assets/gifts/${gift.image}"
-                alt="${gift.name}">
+<div class="giftRow">
+
+    <div class="giftImage">
+
+        <img
+            src="assets/gifts/${gift.image}"
+            alt="${gift.name}">
+
+    </div>
+
+    <div class="giftInfo">
+
+        <div class="giftName">
+
+            ${gift.name}
 
         </div>
 
-        <div class="giftUser">${user}</div>
+        <div class="giftUser">
 
-        <div class="giftName">${gift.name}</div>
+            👤 ${user}
 
-        <div class="giftPoints">+${gift.points}</div>
-    `;
+        </div>
 
-    container.appendChild(card);
+    </div>
+
+    <div class="giftPoints">
+
+        +${gift.points}
+
+    </div>
+
+</div>
+
+`;
+
+    giftContainer.innerHTML = "";
+
+    giftContainer.appendChild(card);
 
     if(target){
 
@@ -83,7 +112,7 @@ function flyGift(card, target, gift){
 
     flying.className = "flyingGift";
 
-    document.body.appendChild(flying);
+    document.appendChild(flying);
 
     // Posición inicial
     const start = original.getBoundingClientRect();
@@ -122,6 +151,14 @@ function flyGift(card, target, gift){
 
         card.remove();
 
+        giftContainer.innerHTML = `
+        <span class="waitingText">
+
+        Esperando regalos...
+
+        </span>
+        `;
+
         if(currentGiftCard === card){
 
             currentGiftCard = null;
@@ -129,5 +166,22 @@ function flyGift(card, target, gift){
         }
 
     });
+
+    // Protección por si falla la animación
+setTimeout(() => {
+
+    if (flying.parentNode) {
+        flying.remove();
+    }
+
+    if (card.parentNode) {
+        card.remove();
+    }
+
+    if (currentGiftCard === card) {
+        currentGiftCard = null;
+    }
+
+}, 1200);
 
 }
