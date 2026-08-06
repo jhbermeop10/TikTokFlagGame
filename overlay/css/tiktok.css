@@ -187,7 +187,11 @@ body{
 
     overflow:hidden;
 
-    background:transparent;
+    background:
+    linear-gradient(
+    180deg,
+    #adadad,
+    #8b8b8b);
 
 }
 
