@@ -26,7 +26,7 @@
 
 }
 
-/* #app{
+#app{
 
     flex:1;
 
@@ -42,22 +42,7 @@
 
     min-height:1600px;
 
-}  */
-
-#app{
-
-    width:1080px;
-    height:1920px;
-
-    padding:35px;
-
-    box-sizing:border-box;
-
-    display:flex;
-
-    flex-direction:column;
-
-}
+}  
 
 #header{
 
@@ -67,7 +52,7 @@
 
     align-items:center;
 
-    gap:3px;
+    gap:2px;
 
     margin-bottom:12px;
 
@@ -91,9 +76,9 @@
 
     margin:0;
 
-    font-size:20px;
+    font-size:24px;
 
-    font-weight:700;
+    font-weight:800;
 
     letter-spacing:1px;
 
@@ -155,7 +140,7 @@
 
 }
 
-/* body{
+body{
 
     width:390px;
 
@@ -176,24 +161,7 @@
     #adadad,
     #8b8b8b);
 
-} */
-
-body{
-
-    width:1080px;
-    height:1920px;
-
-    margin:0;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(
-    180deg,
-    #adadad,
-    #8b8b8b);
-
-}
+} 
 
 /*==============================
  TARJETA DEL PAIS
@@ -205,13 +173,15 @@ body{
 
     border-radius:16px;
 
-    padding:6px 10px;
+    padding:10px 14px;
 
-    margin-bottom:5px;
+    margin-bottom:8px;
+
+    border:1px solid #ececec;
 
     box-shadow:
 
-    0 10px 25px rgba(0,0,0,.08);
+    0 6px 18px rgba(0,0,0,.12);
 
     transition:.35s;
 
@@ -241,9 +211,9 @@ body{
 
 .countryIcon{
 
-    width:24px;
+    width:34px;
 
-    height:24px;
+    height:34px;
 
     border-radius:50%;
 
@@ -519,5 +489,11 @@ body{
     display:flex;
 
     flex-direction:column;
+
+}
+
+#titleArea{
+
+    margin-bottom:6px;
 
 }
